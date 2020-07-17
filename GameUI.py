@@ -1,32 +1,7 @@
 #!/usr/bin/env python3
 
 import pygame as py
-
-# --------------------------------------------------------
-# Constants:
-# Colors:
-COLOR_BACKGROUND = (80, 80, 80)
-COLOR_TEXT_TOP = (1, 1, 1)
-COLOR_TEXT_1 = (50, 50, 250)
-COLOR_TEXT_2 = (50, 250, 50)
-COLOR_TEXT_3 = (250, 50, 50)
-COLOR_TEXT_4 = (0, 0, 150)
-COLOR_TEXT_5 = (0, 150, 0)
-COLOR_TEXT_6 = (150, 0, 0)
-COLOR_TEXT_7 = (50, 0, 0)
-COLOR_TEXT_8 = (0, 0, 0)
-COLOR_TEXT_NUMBERS = [COLOR_TEXT_1, COLOR_TEXT_2, COLOR_TEXT_3, COLOR_TEXT_4,
-                      COLOR_TEXT_5, COLOR_TEXT_6, COLOR_TEXT_7, COLOR_TEXT_8]
-
-# Box dimensions:
-BOX_WIDTH = 30
-BOX_HEIGHT = 30
-
-# Textsize:
-SIZE_FONT_NUMBERS = 20
-SIZE_FONT_MINES = 20
-
-# --------------------------------------------------------
+from Constants import *
 
 
 class Box(object):

@@ -4,14 +4,7 @@ import random as rand
 import GameUI
 from GameUI import GameUI as Gui
 from GameUI import Box as Box
-
-# --------------------------------------------------------
-# Constants:
-MAX_ROWS = 30
-MAX_COLUMNS = 50
-MIN_ROWS = 10
-MIN_COLUMNS = 10
-# --------------------------------------------------------
+from Constants import *
 
 
 class MineSweeper(object):
@@ -104,8 +97,7 @@ class MineSweeper(object):
                 else:
                     self.minefield[row][col].num_of_surrounding_mines += 1
 
-    @staticmethod
-    def valid_mine_placement():
+    def valid_mine_placement(self):
         # TODO: Make validation function
         return True
 
@@ -223,9 +215,17 @@ class MineSweeper(object):
 
 
 if __name__ == '__main__':
-    r = 25
-    c = 30
-    gui = True
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Minesweeper")
+    parser.add_argument('-c', '--columns', dest='cols', default=10, type=int, help="Number of columns (10 - 50")
+    parser.add_argument('-r', '--rows', dest='rows', default=10, type=int, help="Number of rows (10 - 30)")
+    parser.add_argument('-g', '--gui', dest='gui', default=True, action='store_false', help="Disable GUI")
+    args = parser.parse_args()
+
+    r = args.cols
+    c = args.rows
+    gui = args.gui
     ar = False
 
     MS = MineSweeper(rows=r, columns=c, view_gui=gui)
